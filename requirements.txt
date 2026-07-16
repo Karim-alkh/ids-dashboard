@@ -1,0 +1,14 @@
+# Python dependencies for the IDS dashboard backend.
+# Install with: pip install -r requirements.txt
+#
+# You ALSO need tshark (Wireshark's CLI) installed as a system package --
+# pyshark is just a Python wrapper around it, it isn't pip-installable on
+# its own:
+#   Debian/Ubuntu: sudo apt install tshark
+#   macOS:         brew install wireshark
+#   Windows:       install Wireshark, make sure tshark.exe is on PATH
+
+Flask>=3.1,<4.0
+Flask-SocketIO>=5.6,<6.0
+eventlet>=0.41,<0.42
+pyshark>=0.6,<0.7

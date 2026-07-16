@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+    <header class="topbar">
+        <div class="topbar-left">
+            <h1>Network IDS Dashboard</h1>
+            <p>Real-time capture and intrusion detection.</p>
+        </div>
+        <div class="top-actions">
+            <button id="startBtn" class="btn btn-success">Start IDS</button>
+            <button id="stopBtn" class="btn btn-danger" disabled>Stop IDS</button>
+        </div>
+    </header>
+
+    <section class="system-banner">
+        <div>
+            <h3>Capture Status</h3>
+            <span id="captureStatus">STOPPED</span>
+        </div>
+        <div>
+            <h3>Total Packets</h3>
+            <span id="totalPackets">0</span>
+        </div>
+        <div>
+            <h3>Detected Attacks</h3>
+            <span id="attackPackets">0</span>
+        </div>
+        <div>
+            <h3>Packet Rate</h3>
+            <span id="packetRate">0 pkt/s</span>
+        </div>
+    </section>
+
+    <section class="card health-card">
+        <div class="card-header">
+            <h2>System Health</h2>
+        </div>
+        <div class="health-list">
+            <div class="health-row">
+                <span>CPU Usage</span>
+                <span id="cpuUsage">0%</span>
+            </div>
+            <div class="progress"><div id="cpuBar" style="width: 0%"></div></div>
+            <div class="health-row">
+                <span>Memory</span>
+                <span id="memoryUsage">0 MB</span>
+            </div>
+            <div class="progress"><div id="memoryBar" style="width: 0%"></div></div>
+            <div class="health-row">
+                <span>Queue</span>
+                <span id="queueValue">0</span>
+            </div>
+            <div class="progress"><div id="queueBar" style="width: 0%"></div></div>
+            <div class="health-row">
+                <span>Uptime</span>
+                <span id="uptime">00:00:00</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="flows-section">
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Traffic Overview</h2>
+                    <p>Live capture is summarized in charts to reduce UI load. Use the Flows page or Export to retrieve detailed flow data.</p>
+                </div>
+            </div>
+            <div class="card-body" style="padding:16px;">
+                <div id="chartSummary" style="min-height:180px; display:flex; gap:12px; align-items:center; justify-content:center; color:var(--text-secondary);">
+                    <div>
+                        <h3>Packets/sec</h3>
+                        <div id="packetRateLarge" style="font-size:28px; font-weight:700;">0</div>
+                    </div>
+                    <div>
+                        <h3>Attacks/sec</h3>
+                        <div id="attacksRateLarge" style="font-size:28px; font-weight:700; color:var(--danger);">0</div>
+                    </div>
+                    <div>
+                        <h3>Active Alerts</h3>
+                        <div id="alertCountLarge" style="font-size:28px; font-weight:700; color:var(--warning);">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

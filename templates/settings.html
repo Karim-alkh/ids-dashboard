@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    <header class="topbar">
+        <div class="topbar-left">
+            <h1>Settings</h1>
+            <p>Configure capture and detection behavior.</p>
+        </div>
+    </header>
+
+    <section class="card">
+        <div class="card-header">
+            <div>
+                <h2>Capture Settings</h2>
+                <p>The capture interface and thresholds can be configured here.</p>
+            </div>
+        </div>
+        <div class="card-body" style="padding: 24px; gap: 16px; display: grid;">
+            <div>
+                <strong>Interface</strong>
+                <p>Configured from config.json: <code>{{ config.get('interface', 'unknown') }}</code></p>
+            </div>
+            <div>
+                <strong>Capture tuning</strong>
+                <p>BPF filter: <code>{{ config.get('capture_bpf', '') or '(none)' }}</code></p>
+                <p>Sampling rate: <code>{{ config.get('sampling_rate', 1) }}</code> (process 1 of N packets)</p>
+            </div>
+            <div>
+                <strong>Detection thresholds</strong>
+                <p>Live threshold controls will be added in a later step.</p>
+            </div>
+            <div>
+                <strong>IOC / blocklist</strong>
+                <p>Static indicators of compromise support is planned for expansion.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

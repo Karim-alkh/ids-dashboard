@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <header class="topbar">
+        <div class="topbar-left">
+            <h1>Export</h1>
+            <p>Export IDS data for offline review and analysis.</p>
+        </div>
+    </header>
+
+    <section class="card">
+        <div class="card-header">
+            <div>
+                <h2>Export Options</h2>
+                <p>Export flow summaries or raw PCAPs for incident investigation.</p>
+            </div>
+        </div>
+        <div class="card-body" style="padding: 24px; gap: 16px; display: grid;">
+            <a class="btn btn-secondary" href="/export/flows.csv">Export current flows (CSV)</a>
+
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                <label for="alertSelect"><strong>Export suspicious traffic PCAP</strong></label>
+                <select id="alertSelect" style="min-width:320px;">
+                    <option value="">Select recent alert...</option>
+                </select>
+                <button id="exportPcapBtn" class="btn btn-secondary">Export PCAP</button>
+            </div>
+
+            <p class="status-summary">Select a recent alert and click Export PCAP to capture a small PCAP for that flow.</p>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/export.js') }}"></script>
+{% endblock %}
