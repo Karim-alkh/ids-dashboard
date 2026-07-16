@@ -19,7 +19,6 @@ Real-time network monitoring with **MITRE ATT&CK mapping**, **host reputation**,
 - [MITRE ATT&CK Mappings](#-mitre-attck-mappings)
 - [Project Structure](#-project-structure)
 - [Configuration](#-configuration)
-- [Screenshots](#-screenshots)
 - [License](#-license)
 
 ---
