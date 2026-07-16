@@ -254,22 +254,6 @@ ids-dashboard/
 
 ---
 
-## 📸 Screenshots
-
-### Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
-
-### Flow Inspector with MITRE ATT&CK
-![Inspector](screenshots/inspector.png)
-
-### Alert Management
-![Alerts](screenshots/alerts.png)
-
-### Flow Table with Search & Filter
-![Flows](screenshots/flows.png)
-
----
-
 ## 🧪 Testing Without Live Capture
 
 ```
